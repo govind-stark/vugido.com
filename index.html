@@ -29,8 +29,10 @@
       /* Prevent long words from overflowing and ensure safe bottom spacing on mobile */
       p { overflow-wrap: anywhere; }
       .safe-bottom { padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
-      /* Avoid inner vertical scrollbars on sections */
-      section, main, footer { overflow-y: visible; }
+      /* Radial gradient utility for image fadeout effect */
+      .bg-gradient-radial {
+        background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.8) 100%);
+      }
 
       /* Utility to hide scrollbars in a specific area */
       .no-scrollbar { overflow: hidden; }
@@ -162,7 +164,7 @@
       <div class="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 bg-gradient-to-tr from-neon-blue/40 via-neon-purple/40 to-neon-lime/40 blur-3xl rounded-full"></div>
       <div class="z-10 text-center px-6" data-aos="fade-up">
         <h1 class="inline-block overflow-visible text-5xl md:text-7xl font-extrabold leading-[1.25] mb-6 pb-4 md:pb-5 bg-clip-text text-transparent text-gradient-fix bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue">Vugido</h1>
-        <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 no-scrollbar">Need an AI Agent for your business? I'll build and ship it fast.</p>
+        <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 no-scrollbar"><span id="typing" class="typing-caret"></span></p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="#services" class="px-8 py-4 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue text-black font-semibold rounded-full hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">Get Started</a>
           <a href="#about" class="px-8 py-4 bg-white/10 text-white border border-white/20 rounded-full hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">Learn More</a>
@@ -178,14 +180,16 @@
     <section id="about" class="py-16 px-6 md:px-20 bg-gray-900 text-white overflow-visible">
       <div class="max-w-4xl mx-auto text-center overflow-visible" data-aos="fade-up">
         <div class="mb-8">
-          <!-- Profile Picture -->
-          <div class="relative inline-block">
-            <div class="w-48 h-48 bg-gradient-to-br from-neon-purple via-neon-blue to-neon-lime rounded-full mx-auto mb-6 flex items-center justify-center text-8xl font-bold text-black shadow-2xl border-4 border-white/20 hover:scale-105 transition-transform duration-300">
-              GS
+            <!-- Complete Profile Image -->
+            <div class="relative inline-block">
+              <div class="relative w-64 h-64 mx-auto mb-6">
+                <img src="your-photo.jpeg" alt="Govind Stark" class="w-full h-full shadow-2xl border-4 border-white/20 hover:scale-105 transition-transform duration-300 object-cover" style="border-radius: 20px;">
+                <!-- Subtle background blend -->
+                <div class="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-transparent to-gray-900/60 mix-blend-multiply" style="border-radius: 20px;"></div>
+              </div>
+              <!-- Glow effect -->
+              <div class="absolute inset-0 w-64 h-64 bg-gradient-to-br from-neon-purple via-neon-blue to-neon-lime mx-auto blur-2xl opacity-20 -z-10" style="border-radius: 20px;"></div>
             </div>
-            <!-- Glow effect -->
-            <div class="absolute inset-0 w-48 h-48 bg-gradient-to-br from-neon-purple via-neon-blue to-neon-lime rounded-full mx-auto blur-xl opacity-30 -z-10"></div>
-          </div>
           <h2 class="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-lime">Govind Stark</h2>
         </div>
         <p class="text-xl text-gray-200 mb-8">
@@ -275,29 +279,29 @@
 
       <!-- CTA Form -->
       <div class="max-w-2xl mx-auto" data-aos="fade-up">
-        <form id="ai-agent-form" class="bg-gray-800/50 backdrop-blur p-8 rounded-xl border border-gray-700">
-          <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <form id="ai-agent-form" class="bg-gray-800/50 backdrop-blur p-4 sm:p-6 md:p-8 rounded-xl border border-gray-700">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
             <label class="block text-left">
               <span class="text-sm text-gray-300 mb-2 block">Your Name</span>
-            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-purple focus:border-transparent form-input" placeholder="Enter your name" />
+            <input type="text" name="name" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-purple focus:border-transparent form-input text-sm sm:text-base" placeholder="Enter your name" />
             </label>
             <label class="block text-left">
               <span class="text-sm text-gray-300 mb-2 block">Email</span>
-              <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent form-input" placeholder="your@email.com" />
+              <input type="email" name="email" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent form-input text-sm sm:text-base" placeholder="your@email.com" />
             </label>
           </div>
-          <label class="block text-left mb-6">
+          <label class="block text-left mb-4 sm:mb-6">
             <span class="text-sm text-gray-300 mb-2 block">Business Description</span>
-            <input type="text" name="business" required class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-pink focus:border-transparent form-input" placeholder="e.g., E-commerce store, SaaS company, Healthcare clinic" />
+            <input type="text" name="business" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-pink focus:border-transparent form-input text-sm sm:text-base" placeholder="e.g., E-commerce store, SaaS company, Healthcare clinic" />
           </label>
-          <label class="block text-left mb-8">
+          <label class="block text-left mb-4 sm:mb-6">
             <span class="text-sm text-gray-300 mb-2 block">What do you want the AI to do?</span>
-            <textarea name="ai-task" rows="4" required class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-lime focus:border-transparent resize-none form-input" placeholder="Describe the specific task or problem you want the AI agent to solve..."></textarea>
+            <textarea name="ai-task" rows="3" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-lime focus:border-transparent resize-none form-input text-sm sm:text-base" placeholder="Describe the specific task or problem you want the AI agent to solve..." style="min-height: 80px;"></textarea>
           </label>
-          <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue text-black font-semibold rounded-lg hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black btn-gradient">
+          <button type="submit" class="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue text-black font-semibold rounded-lg hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black btn-gradient text-sm sm:text-base">
             Get My Custom AI Agent Quote
           </button>
-          <p class="text-xs text-gray-500 mt-4">Free consultation • No commitment required • Response within 24 hours</p>
+          <p class="text-xs text-gray-500 mt-3 sm:mt-4 text-center">Free consultation • No commitment required • Response within 24 hours</p>
         </form>
       </div>
     </section>
@@ -345,19 +349,34 @@
           AOS.init({ once: true, duration: 650, easing: 'ease-out' });
         }
 
-        // Typing effect for hero paragraph
+        // Typing effect for hero paragraph - Slower, more human-like
         const typingEl = document.getElementById('typing');
-        const fullText = 'A creative AI lab for filmmakers & content creators.  Build your stories. Direct your reels. Compose your pitch.';
+        const fullText = 'Need an AI Agent for your business? I\'ll build and ship it fast.  Custom solutions. No fluff. Results in days.';
         if (typingEl) {
           if (prefersReduced) {
             typingEl.textContent = fullText;
           } else {
             let i = 0;
-            const speed = 22; // ms per character
+            const baseSpeed = 45; // ms per character (slower than before)
+            const wordDelay = 200; // ms pause between words
             const type = () => {
               if (i <= fullText.length) {
                 typingEl.textContent = fullText.slice(0, i++);
-                setTimeout(type, speed);
+                // Add longer pauses at word boundaries
+                const currentChar = fullText[i - 1];
+                let delay = baseSpeed;
+
+                // Pause longer after punctuation
+                if (currentChar === '?' || currentChar === '.') {
+                  delay = baseSpeed * 4; // longer pause after sentences
+                } else if (currentChar === ' ') {
+                  delay = wordDelay; // pause between words
+                } else if (Math.random() < 0.1) {
+                  // Occasional random pause for human-like typing
+                  delay = baseSpeed * 2;
+                }
+
+                setTimeout(type, delay);
               }
             };
             type();
