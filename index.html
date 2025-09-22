@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vugido - Custom AI Agents for Business</title>
-    <meta name="description" content="Build custom AI agents for your business. Chatbots, workflow automation, knowledge bases, and sales AI. Fast turnaround, no fluff. Get your AI solution in days." />
+    <title>Vugido - For Creators and Storytellers</title>
+    <meta name="description" content="Vugido is an AI-native creative lab for filmmakers and digital creators—storyboarding, reels automation, music, and more." />
     <meta name="theme-color" content="#000000" />
 
     <!-- Performance: preconnect and hero preload -->
@@ -29,10 +29,8 @@
       /* Prevent long words from overflowing and ensure safe bottom spacing on mobile */
       p { overflow-wrap: anywhere; }
       .safe-bottom { padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
-      /* Radial gradient utility for image fadeout effect */
-      .bg-gradient-radial {
-        background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.8) 100%);
-      }
+      /* Avoid inner vertical scrollbars on sections */
+      section, main, footer { overflow-y: visible; }
 
       /* Utility to hide scrollbars in a specific area */
       .no-scrollbar { overflow: hidden; }
@@ -70,69 +68,8 @@
         vertical-align: -0.15em;
         animation: caretBlink 1s steps(1, end) infinite;
       }
-      /* Enhanced animations */
-      @keyframes pulse-glow {
-        0%, 100% {
-          box-shadow: 0 0 20px rgba(255, 78, 205, 0.3);
-          transform: scale(1);
-        }
-        50% {
-          box-shadow: 0 0 30px rgba(255, 78, 205, 0.6);
-          transform: scale(1.02);
-        }
-      }
-
-      @keyframes fade-in-up {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .pulse-glow:hover {
-        animation: pulse-glow 2s ease-in-out infinite;
-      }
-
-      .fade-in-up {
-        animation: fade-in-up 0.8s ease-out;
-      }
-
-      /* Enhanced service card animations */
-      .service-card:hover {
-        transform: translateY(-10px) scale(1.02);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .service-card:hover .service-icon {
-        transform: rotate(5deg) scale(1.1);
-        transition: transform 0.3s ease;
-      }
-
-      /* Button hover effects */
-      .btn-gradient:hover {
-        background-size: 200% 200%;
-        animation: gradient-shift 1s ease infinite;
-      }
-
-      @keyframes gradient-shift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-
-      /* Form input focus animations */
-      .form-input:focus {
-        animation: input-glow 0.3s ease;
-      }
-
-      @keyframes input-glow {
-        0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.7); }
-        100% { box-shadow: 0 0 0 10px rgba(124, 58, 237, 0); }
-      }
+      /* Fix for clipped gradient text descenders on some browsers */
+      .text-gradient-fix { -webkit-text-fill-color: transparent; }
     </style>
     <script>
       // Tailwind CDN config enhancements
@@ -164,11 +101,8 @@
       <div class="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 bg-gradient-to-tr from-neon-blue/40 via-neon-purple/40 to-neon-lime/40 blur-3xl rounded-full"></div>
       <div class="z-10 text-center px-6" data-aos="fade-up">
         <h1 class="inline-block overflow-visible text-5xl md:text-7xl font-extrabold leading-[1.25] mb-6 pb-4 md:pb-5 bg-clip-text text-transparent text-gradient-fix bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue">Vugido</h1>
-        <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 no-scrollbar"><span id="typing" class="typing-caret"></span></p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="#services" class="px-8 py-4 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue text-black font-semibold rounded-full hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">Get Started</a>
-          <a href="#about" class="px-8 py-4 bg-white/10 text-white border border-white/20 rounded-full hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">Learn More</a>
-        </div>
+        <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto no-scrollbar"><span id="typing" class="typing-caret"></span></p>
+        <a href="#about" class="mt-3 inline-block px-6 py-3 bg-white text-black rounded-full text-sm hover:bg-gray-200 transition-all focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">Explore More</a>
       </div>
     </section>
 
@@ -176,27 +110,14 @@
     <div class="h-1 w-full bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue"></div>
 
     <main id="main">
-    <!-- About Section -->
+    <!-- About / Teaser Section -->
     <section id="about" class="py-16 px-6 md:px-20 bg-gray-900 text-white overflow-visible">
-      <div class="max-w-4xl mx-auto text-center overflow-visible" data-aos="fade-up">
-        <div class="mb-8">
-            <!-- Complete Profile Image -->
-            <div class="relative inline-block">
-              <div class="relative w-64 h-64 mx-auto mb-6">
-                <img src="your-photo.jpeg" alt="Govind Stark" class="w-full h-full shadow-2xl border-4 border-white/20 hover:scale-105 transition-transform duration-300 object-cover" style="border-radius: 20px;">
-                <!-- Subtle background blend -->
-                <div class="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-transparent to-gray-900/60 mix-blend-multiply" style="border-radius: 20px;"></div>
-              </div>
-              <!-- Glow effect -->
-              <div class="absolute inset-0 w-64 h-64 bg-gradient-to-br from-neon-purple via-neon-blue to-neon-lime mx-auto blur-2xl opacity-20 -z-10" style="border-radius: 20px;"></div>
-            </div>
-          <h2 class="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-lime">Govind Stark</h2>
-        </div>
-        <p class="text-xl text-gray-200 mb-8">
-          I'm Stark, I build AI-powered agents tailored to businesses. Fast turnaround, no fluff.
-        </p>
-        <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-          I specialize in creating custom AI solutions that actually work. From chatbots that handle customer support 24/7 to workflow automation that saves your team hours every week — I build agents that integrate seamlessly with your existing systems and deliver real results.
+      <div class="max-w-5xl mx-auto text-center overflow-visible" data-aos="fade-up">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-lime">Who Are We?</h2>
+        <p class="text-lg text-gray-200">
+          Vugido is building a suite of AI-native products for storytellers, directors, and digital creators.
+          We automate the complex — from storyboarding to music, screenplay to reels.  
+          But what we offer is not a tool... it’s a canvas for your imagination.
         </p>
       </div>
     </section>
@@ -204,104 +125,65 @@
     <!-- Section divider -->
     <div class="h-1 w-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink"></div>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 px-6 md:px-20 bg-gray-900">
-      <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-lime">AI That Actually Works</h2>
-        <p class="text-lg text-gray-300 max-w-3xl mx-auto">Custom AI solutions tailored to automate and enhance your business operations</p>
-      </div>
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up">
-        <div class="bg-gray-800/80 backdrop-blur p-6 rounded-lg shadow hover:shadow-xl transition border border-gray-700 hover:border-neon-purple group service-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-12 h-12 bg-neon-purple/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-neon-purple/30 transition service-icon">
-            <svg class="w-6 h-6 text-neon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-neon-purple">Chatbots</h3>
-          <p class="text-gray-300 text-sm">Intelligent customer support agents that handle inquiries 24/7 with natural conversation flow.</p>
-        </div>
-        <div class="bg-gray-800/80 backdrop-blur p-6 rounded-lg shadow hover:shadow-xl transition border border-gray-700 hover:border-neon-blue group service-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-12 h-12 bg-neon-blue/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-neon-blue/30 transition service-icon">
-            <svg class="w-6 h-6 text-neon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-neon-blue">Knowledge Base Agents</h3>
-          <p class="text-gray-300 text-sm">Smart systems that organize and retrieve information from your documents and databases instantly.</p>
-        </div>
-        <div class="bg-gray-800/80 backdrop-blur p-6 rounded-lg shadow hover:shadow-xl transition border border-gray-700 hover:border-neon-pink group service-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="w-12 h-12 bg-neon-pink/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-neon-pink/30 transition service-icon">
-            <svg class="w-6 h-6 text-neon-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-neon-pink">Workflow Automation</h3>
-          <p class="text-gray-300 text-sm">Streamline repetitive tasks and processes with intelligent automation that learns and adapts.</p>
-        </div>
-        <div class="bg-gray-800/80 backdrop-blur p-6 rounded-lg shadow hover:shadow-xl transition border border-gray-700 hover:border-neon-lime group service-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="w-12 h-12 bg-neon-lime/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-neon-lime/30 transition service-icon">
-            <svg class="w-6 h-6 text-neon-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-neon-lime">Sales & Marketing AI</h3>
-          <p class="text-gray-300 text-sm">AI assistants that qualify leads, personalize campaigns, and boost conversion rates automatically.</p>
-        </div>
-      </div>
-    <!-- How It Works Section -->
+    <!-- Services Teaser Grid -->
     <section class="py-20 px-6 md:px-20 bg-black">
-      <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-neon-purple to-neon-pink">How It Works</h2>
-        <p class="text-lg text-gray-300 max-w-3xl mx-auto">Simple, fast, and effective. Get your custom AI agent in just 3 steps.</p>
-      </div>
-      <div class="max-w-4xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-20 h-20 bg-gradient-to-r from-neon-pink to-neon-purple rounded-full flex items-center justify-center mx-auto mb-6">
-              <span class="text-2xl font-bold text-black">1</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-4 text-neon-pink">Tell Me Your Problem</h3>
-            <p class="text-gray-300">Describe your business challenge and what you want the AI agent to accomplish. The more details, the better the solution.</p>
-          </div>
-          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-20 h-20 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full flex items-center justify-center mx-auto mb-6">
-              <span class="text-2xl font-bold text-black">2</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-4 text-neon-purple">I Design & Build</h3>
-            <p class="text-gray-300">I create a custom AI agent tailored to your specific needs, with the right tools, integrations, and intelligence.</p>
-          </div>
-          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-            <div class="w-20 h-20 bg-gradient-to-r from-neon-blue to-neon-lime rounded-full flex items-center justify-center mx-auto mb-6">
-              <span class="text-2xl font-bold text-black">3</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-4 text-neon-blue">You Get Results</h3>
-            <p class="text-gray-300">Receive a working AI agent that solves your problem. Deploy it immediately and start seeing improvements in days, not months.</p>
-          </div>
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10" data-aos="fade-up">
+        <div class="bg-gray-800/80 backdrop-blur p-6 rounded-lg shadow hover:shadow-xl transition border border-gray-700 hover:border-neon-purple" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold mb-2">🎬 Storyboarding</h3>
+          <p class="text-gray-200 text-sm">Sketch your scenes before the cameras roll. Automated. Precise. Visual.</p>
+        </div>
+        <div class="bg-gray-800/80 backdrop-blur p-6 rounded-lg shadow hover:shadow-xl transition border border-gray-700 hover:border-neon-blue" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-semibold mb-2">🎞️ Reels Automation</h3>
+          <p class="text-gray-200 text-sm">From script to screen — generate Insta-ready reels in minutes.</p>
+        </div>
+        <div class="bg-gray-800/80 backdrop-blur p-6 rounded-lg shadow hover:shadow-xl transition border border-gray-700 hover:border-neon-pink" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-xl font-semibold mb-2">🎵 Music & Audio</h3>
+          <p class="text-gray-200 text-sm">Background scores that fit your mood — generated in sync with your visuals.</p>
         </div>
       </div>
-    <section class="py-32 bg-gradient-to-b from-black to-gray-900 text-center px-4 safe-bottom" data-aos="zoom-in">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">Ready to Build Your AI Agent?</h2>
-      <p class="text-gray-400 max-w-2xl mx-auto mb-12">
-        Describe your business and what you want the AI to do. I'll get back to you within 24 hours with a custom solution.
-      </p>
+    </section>
 
-      <!-- CTA Form -->
-      <div class="max-w-2xl mx-auto" data-aos="fade-up">
-        <form id="ai-agent-form" class="bg-gray-800/50 backdrop-blur p-4 sm:p-6 md:p-8 rounded-xl border border-gray-700">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
-            <label class="block text-left">
-              <span class="text-sm text-gray-300 mb-2 block">Your Name</span>
-            <input type="text" name="name" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-purple focus:border-transparent form-input text-sm sm:text-base" placeholder="Enter your name" />
+    <!-- Section divider -->
+    <div class="h-1 w-full bg-gradient-to-r from-neon-pink via-neon-lime to-neon-blue"></div>
+
+    <!-- Cinematic Call to Action -->
+    <section class="py-32 bg-gradient-to-b from-black to-gray-900 text-center px-4 safe-bottom" data-aos="zoom-in">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">This is just the trailer.</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+        The full feature is coming soon. Stay tuned. Join our creator collective and be part of something original.
+      </p>
+      <a href="#waitlist" class="bg-white text-black px-8 py-3 rounded-full text-sm hover:bg-gray-200 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">Join the Waitlist</a>
+    </section>
+
+    <!-- Section divider -->
+    <div class="h-1 w-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-lime"></div>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="py-20 px-6 md:px-20 bg-gray-900 safe-bottom">
+      <div class="max-w-3xl mx-auto" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-neon-purple to-neon-pink">Get Early Access</h2>
+        <p class="text-gray-200 mb-8">Be first to try our creator tools. Join the waitlist and we’ll reach out when we open access.</p>
+        <form id="waitlist-form" class="grid gap-4 bg-black/40 p-6 rounded-xl border border-gray-700">
+          <div class="grid md:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm text-gray-300">Your Name</span>
+              <input type="text" name="name" required class="mt-1 w-full px-3 py-2 rounded bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-neon-purple" placeholder="e.g., Alex" />
             </label>
-            <label class="block text-left">
-              <span class="text-sm text-gray-300 mb-2 block">Email</span>
-              <input type="email" name="email" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent form-input text-sm sm:text-base" placeholder="your@email.com" />
+            <label class="block">
+              <span class="text-sm text-gray-300">Email</span>
+              <input type="email" name="email" required class="mt-1 w-full px-3 py-2 rounded bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-neon-blue" placeholder="you@example.com" />
             </label>
           </div>
-          <label class="block text-left mb-4 sm:mb-6">
-            <span class="text-sm text-gray-300 mb-2 block">Business Description</span>
-            <input type="text" name="business" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-pink focus:border-transparent form-input text-sm sm:text-base" placeholder="e.g., E-commerce store, SaaS company, Healthcare clinic" />
+          <label class="block">
+            <span class="text-sm text-gray-300">What are you creating?</span>
+            <textarea name="message" rows="4" class="mt-1 w-full px-3 py-2 rounded bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-neon-pink" placeholder="Short films, reels, music videos, etc."></textarea>
           </label>
-          <label class="block text-left mb-4 sm:mb-6">
-            <span class="text-sm text-gray-300 mb-2 block">What do you want the AI to do?</span>
-            <textarea name="ai-task" rows="3" required class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-lime focus:border-transparent resize-none form-input text-sm sm:text-base" placeholder="Describe the specific task or problem you want the AI agent to solve..." style="min-height: 80px;"></textarea>
-          </label>
-          <button type="submit" class="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue text-black font-semibold rounded-lg hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black btn-gradient text-sm sm:text-base">
-            Get My Custom AI Agent Quote
-          </button>
-          <p class="text-xs text-gray-500 mt-3 sm:mt-4 text-center">Free consultation • No commitment required • Response within 24 hours</p>
+          <div class="flex items-center justify-between gap-4 flex-wrap">
+            <p class="text-xs text-gray-400">We don’t use social handles. Your info goes directly to our team.</p>
+            <button type="submit" class="px-6 py-3 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue text-black font-semibold rounded-full hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">
+              Join Waitlist
+            </button>
+          </div>
         </form>
       </div>
     </section>
@@ -321,22 +203,15 @@
             <a class="text-white underline hover:no-underline" href="mailto:govindstark@vugido.com">govindstark@vugido.com</a>
           </p>
           <p class="text-sm mb-2 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-neon-pink">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
-            </svg>
-            <span>WhatsApp:</span>
-            <a class="text-white underline hover:no-underline" href="https://wa.me/918919935776" target="_blank">+91 89199 35776</a>
-          </p>
-          <p class="text-sm mb-2 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-neon-lime"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Zm0 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-neon-pink"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Zm0 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg>
             <span>Location:</span>
             <span class="text-white">Mumbai, India</span>
           </p>
-          <p class="text-xs text-gray-500">Response within 24 hours</p>
+          <p class="text-xs text-gray-500">We reply within 2 business days.</p>
         </div>
         <div>
           <h4 class="text-white font-semibold mb-2">About</h4>
-          <p class="text-sm text-gray-300">I build custom AI agents for businesses. From chatbots to workflow automation — I create solutions that work fast and deliver real results. No fluff, just effective AI.</p>
+          <p class="text-sm text-gray-300">Creator-first R&D lab building AI-native workflows for pre-viz, edit, and sound. Purpose-built for filmmakers and digital storytellers.</p>
         </div>
       </div>
     </footer>
@@ -349,55 +224,36 @@
           AOS.init({ once: true, duration: 650, easing: 'ease-out' });
         }
 
-        // Typing effect for hero paragraph - Slower, more human-like
+        // Typing effect for hero paragraph
         const typingEl = document.getElementById('typing');
-        const fullText = 'Need an AI Agent for your business? I\'ll build and ship it fast.  Custom solutions. No fluff. Results in days.';
+        const fullText = 'A creative AI lab for filmmakers & content creators.  Build your stories. Direct your reels. Compose your pitch.';
         if (typingEl) {
           if (prefersReduced) {
             typingEl.textContent = fullText;
           } else {
             let i = 0;
-            const baseSpeed = 45; // ms per character (slower than before)
-            const wordDelay = 200; // ms pause between words
+            const speed = 22; // ms per character
             const type = () => {
               if (i <= fullText.length) {
                 typingEl.textContent = fullText.slice(0, i++);
-                // Add longer pauses at word boundaries
-                const currentChar = fullText[i - 1];
-                let delay = baseSpeed;
-
-                // Pause longer after punctuation
-                if (currentChar === '?' || currentChar === '.') {
-                  delay = baseSpeed * 4; // longer pause after sentences
-                } else if (currentChar === ' ') {
-                  delay = wordDelay; // pause between words
-                } else if (Math.random() < 0.1) {
-                  // Occasional random pause for human-like typing
-                  delay = baseSpeed * 2;
-                }
-
-                setTimeout(type, delay);
+                setTimeout(type, speed);
               }
             };
             type();
           }
         }
 
-        // AI Agent Form: open email client with business details
-        const aiForm = document.getElementById('ai-agent-form');
-        if (aiForm) {
-          aiForm.addEventListener('submit', (e) => {
+        // Waitlist: open email client via mailto (no provider, no status messages)
+        const form = document.getElementById('waitlist-form');
+        if (form) {
+          form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const fd = new FormData(aiForm);
+            const fd = new FormData(form);
             const name = (fd.get('name') || '').toString().trim();
             const email = (fd.get('email') || '').toString().trim();
-            const business = (fd.get('business') || '').toString().trim();
-            const aiTask = (fd.get('ai-task') || '').toString().trim();
-
-            const subject = encodeURIComponent('Custom AI Agent Request');
-            const body = encodeURIComponent(
-              `Name: ${name}\nEmail: ${email}\n\nBusiness: ${business}\n\nWhat I want the AI to do:\n${aiTask}\n\n---\nPlease send me a quote for building this AI agent.`
-            );
+            const message = (fd.get('message') || '').toString().trim();
+            const subject = encodeURIComponent('Vugido Waitlist');
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n${message}`);
             window.location.href = `mailto:govindstark@vugido.com?subject=${subject}&body=${body}`;
           });
         }
